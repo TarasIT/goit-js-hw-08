@@ -23,7 +23,6 @@ function getFormData() {
   if (storageData) {
     refs.email.value = parsedFormData.email;
     refs.message.value = parsedFormData.message;
-    return;
   }
 }
 getFormData();
