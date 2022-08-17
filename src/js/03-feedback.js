@@ -30,7 +30,7 @@ getFormData();
 
 function onFormSubmit(event) {
   event.preventDefault();
+  console.log(parsedFormData);
   localStorage.removeItem(FEEDBACK_FORM_KEY);
   event.target.reset();
-  console.log(parsedFormData);
 }
