@@ -11,7 +11,10 @@ function getCurrentTime() {
     .then(function (seconds) {
       return localStorage.setItem(CURRENT_TIME_STORAGE_KEY, seconds);
     })
-    .catch(function (error) {});
+    .catch(function (error) {
+      console.log(error.name);
+      console.log(error.message);
+    });
 }
 
 const timeUpdate = player.on('timeupdate', throttle(getCurrentTime, 1000));
@@ -24,9 +27,12 @@ const setCurrentTime = player
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
+        console.log(error.name);
+        console.log(error.message);
         break;
 
       default:
-        break;
+        console.log(error.name);
+        console.log(error.message);
     }
   });
