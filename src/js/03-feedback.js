@@ -6,7 +6,7 @@ const FORM_KEY = 'feedback-form-state';
 getFormData();
 
 form.addEventListener('submit', onFormSubmit);
-form.addEventListener('change', throttle(onFormInput, 500));
+form.addEventListener('input', throttle(onFormInput, 500));
 
 function onFormSubmit(event) {
   event.preventDefault();
